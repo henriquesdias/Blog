@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const RecommendedPostLayout = styled.div`
+  cursor: pointer;
   margin-right: 20px;
   width: 290px;
   img {

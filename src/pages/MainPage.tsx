@@ -5,14 +5,14 @@ import Feed from "../components/Feed";
 
 export default function MainPage() {
   return (
-    <MainPageLayout>
-      <Header />
+    <PageLayout>
+      <Header showArrow={false} />
       <Feed />
-    </MainPageLayout>
+    </PageLayout>
   );
 }
 
-const MainPageLayout = styled.main`
+const PageLayout = styled.main`
   margin: 45px auto 0 auto;
   padding: 0 10px;
   width: 100%;

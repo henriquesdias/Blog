@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { PostType } from "../protocols";
 import getPosts from "../api/getPosts";
 
-export default function usePosts() {
+export default function usePosts(postId?: number) {
   const [posts, setPosts] = useState<null | PostType[]>(null);
   const [error, setError] = useState<string>("");
 
@@ -13,7 +13,13 @@ export default function usePosts() {
         console.log(res.data);
         setError(res.data);
       })
-      .then((res) => setPosts(res));
+      .then((res) => {
+        if (postId) {
+          setPosts(res.filter((e: PostType) => e.id === postId));
+        } else {
+          setPosts(res);
+        }
+      });
   }, []);
 
   return { posts, error };

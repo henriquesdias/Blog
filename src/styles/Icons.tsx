@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-import { IoSearchOutline, IoNotificationsOutline } from "react-icons/io5";
+import {
+  IoSearchOutline,
+  IoNotificationsOutline,
+  IoArrowBackOutline,
+} from "react-icons/io5";
 
 const IconNotifications = styled(IoNotificationsOutline)`
   font-size: 24px;
@@ -11,4 +15,8 @@ const IconSearch = styled(IoSearchOutline)`
   margin-left: 10px;
 `;
 
-export { IconNotifications, IconSearch };
+const IconBack = styled(IoArrowBackOutline)`
+  font-size: 24px;
+`;
+
+export { IconNotifications, IconSearch, IconBack };

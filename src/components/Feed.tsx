@@ -16,16 +16,14 @@ export default function Feed() {
       <h1>Recommended</h1>
       <ContainerRecommendedPosts>
         {recommendedPosts ? (
-          recommendedPosts.map((e, index) => (
-            <RecommendedPost post={e} key={index} />
-          ))
+          recommendedPosts.map((e) => <RecommendedPost post={e} key={e.id} />)
         ) : (
           <></>
         )}
       </ContainerRecommendedPosts>
       <ContainerPosts>
         {regularPosts ? (
-          regularPosts.map((e, index) => <Post post={e} key={index} />)
+          regularPosts.map((e) => <Post post={e} key={e.id} />)
         ) : (
           <></>
         )}

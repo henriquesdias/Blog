@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const PostLayout = styled.div`
+  cursor: pointer;
   width: 335px;
   height: 79px;
   display: flex;
