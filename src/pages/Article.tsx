@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 import Header from "../components/Header";
 import usePosts from "../hooks/usePosts";
+import ArticleLayout from "../styles/ArticleLayout";
+import Comments from "../components/Comments";
 
 export default function Article() {
   const { postId } = useParams();
@@ -22,46 +24,23 @@ export default function Article() {
           <article>{article?.body}</article>
         </div>
       </ArticleLayout>
+      <h2>Comments</h2>
+
+      <Comments postId={Number(postId)} />
     </PageLayout>
   );
 }
-
-const ArticleLayout = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  img {
-    max-width: 600px;
-    width: 100%;
-    height: 204px;
-    border-radius: 16px;
-    background-size: cover;
-  }
-  h2 {
-    margin: 40px 0;
-    color: #2c2c2c;
-    font-size: 24px;
-    font-weight: bold;
-    width: 100%;
-    max-width: 600px;
-  }
-  article {
-    color: #2c2c2c;
-    font-size: 16px;
-    width: 100%;
-    max-width: 600px;
-  }
-`;
 
 const PageLayout = styled.main`
   margin: 45px auto 0 auto;
   padding: 0 10px;
   width: 100%;
   max-width: 1200px;
+  h2 {
+    width: 100%;
+    max-width: 600px;
+    margin: 35px auto 0 auto;
+    font-weight: bold;
+    font-size: 24px;
+  }
 `;
