@@ -3,11 +3,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import profileImage from "../assets/profile.jpeg";
 import useInformationsUser from "../hooks/useInformationsUser";
 import ProfileLayout from "../styles/ProfileLayout";
+import ErrorMessage from "../components/ErrorMessage";
 
 export default function Profile() {
   const { userId } = useParams();
   const { info, error } = useInformationsUser(Number(userId));
   const navigate = useNavigate();
+
+  if (error) {
+    return <ErrorMessage />;
+  }
   return (
     <ProfileLayout>
       <div>

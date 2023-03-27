@@ -15,7 +15,10 @@ export default function Post({ post }: IPostProps) {
         src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="image-post"
       />
-      <h2>{post.title}</h2>
+      <div>
+        <span>Tecnology</span>
+        <h2>{post.title}</h2>
+      </div>
     </PostLayout>
   );
 }

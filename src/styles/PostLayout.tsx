@@ -13,6 +13,23 @@ const PostLayout = styled.div`
     border-radius: 16px;
     margin-right: 10px;
   }
+  div {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    span {
+      background-color: #f2f2f2;
+      padding: 4px;
+      height: 30px;
+      width: 100px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    }
+  }
 `;
 
 export default PostLayout;

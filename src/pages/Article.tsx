@@ -5,11 +5,15 @@ import Header from "../components/Header";
 import usePosts from "../hooks/usePosts";
 import ArticleLayout from "../styles/ArticleLayout";
 import Comments from "../components/Comments";
+import ErrorMessage from "../components/ErrorMessage";
 
 export default function Article() {
   const { postId } = useParams();
   const { posts, error } = usePosts(Number(postId));
   const article = posts ? posts[0] : null;
+  if (error) {
+    return <ErrorMessage />;
+  }
 
   return (
     <PageLayout>
@@ -36,7 +40,7 @@ const PageLayout = styled.main`
   padding: 0 10px;
   width: 100%;
   max-width: 1200px;
-  h2 {
+  > h2 {
     width: 100%;
     max-width: 600px;
     margin: 35px auto 0 auto;
