@@ -1,7 +1,9 @@
+import request from "../services/request";
+
 export default async function getPosts() {
   try {
-    const URL = "https://jsonplaceholder.typicode.com/posts";
-    const response = await fetch(URL, { method: "GET" });
+    const URL = `${import.meta.env.VITE_BASE_URL}posts`;
+    const response = await request.get(URL);
     return response.json();
   } catch (error) {
     return error;

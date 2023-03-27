@@ -1,7 +1,9 @@
+import request from "../services/request";
+
 export default async function getUsers() {
   try {
-    const URL = "https://jsonplaceholder.typicode.com/users";
-    const response = await fetch(URL, { method: "GET" });
+    const URL = `${import.meta.env.VITE_BASE_URL}users`;
+    const response = await request.get(URL);
     return response.json();
   } catch (error) {
     return error;
