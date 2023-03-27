@@ -1,10 +1,11 @@
-import { useNavigate } from "react-router-dom";
-import HeaderLayout from "../styles/HeaderLayout";
-import { IconNotifications, IconSearch, IconBack } from "../styles/Icons";
-
-import useUsers from "../hooks/useUsers";
-import styled from "styled-components";
 import { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+import { IconNotifications, IconSearch, IconBack } from "../styles/Icons";
+import HeaderLayout from "../styles/HeaderLayout";
+import useUsers from "../hooks/useUsers";
 import { Users } from "../protocols";
 
 interface IHeaderProps {
@@ -25,7 +26,7 @@ export default function Header({ showArrow }: IHeaderProps) {
 function Search() {
   const [valueInput, setValueInput] = useState<string>("");
   const { users } = useUsers(valueInput.toLowerCase());
-
+  const navigate = useNavigate();
   return (
     <ContainerSearch>
       <IconSearch />
@@ -38,7 +39,9 @@ function Search() {
       />
       <UsersLayout>
         {users?.map((e: Users) => (
-          <span key={e.id}>{e.name}</span>
+          <span onClick={() => navigate(`/profile/${e.id}`)} key={e.id}>
+            {e.name}
+          </span>
         ))}
       </UsersLayout>
     </ContainerSearch>
@@ -57,6 +60,7 @@ const UsersLayout = styled.div`
   flex-direction: column;
   width: 100%;
   span {
-    padding: 5px;
+    padding: 10px;
+    cursor: pointer;
   }
 `;

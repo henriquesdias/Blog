@@ -11,6 +11,7 @@ const PostLayout = styled.div`
     width: 96px;
     height: 79px;
     border-radius: 16px;
+    margin-right: 10px;
   }
 `;
 

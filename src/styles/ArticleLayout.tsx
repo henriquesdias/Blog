@@ -30,6 +30,7 @@ const ArticleLayout = styled.div`
     font-size: 16px;
     width: 100%;
     max-width: 600px;
+    text-align: justify;
   }
 `;
 
