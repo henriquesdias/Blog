@@ -14,7 +14,7 @@ export default function Post({ post }: IPostProps) {
     <PostLayout onClick={() => navigate(`/comments/${post.id}`)}>
       <img src={postImage} alt="image-post" />
       <div>
-        <span>Tecnology</span>
+        <span>Technology</span>
         <h2>{post.title}</h2>
       </div>
     </PostLayout>

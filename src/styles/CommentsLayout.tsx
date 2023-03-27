@@ -9,6 +9,7 @@ const CommentsLayout = styled.div`
   background-color: #e0e0e0;
   padding: 20px;
   border-radius: 10px;
+  text-align: justify;
   span {
     font-weight: bold;
     margin-bottom: 5px;
