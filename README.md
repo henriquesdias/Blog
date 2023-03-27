@@ -34,9 +34,13 @@ cd blog/
 ```bash
 npm i
 ```
-4. Start application with 
+4. Create a .env file and fill with following variable:
+```code
+  VITE_BASE_URL=https://jsonplaceholder.typicode.com/
+```
+5. Start application with 
 ```code
   npm run dev
 ```
-5. Access `http://localhost:5173` and enjoy
+6. Access `http://localhost:5173` and enjoy
 
