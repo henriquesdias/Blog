@@ -6,6 +6,7 @@ import ArticleLayout from "../styles/ArticleLayout";
 import Comments from "../components/Comments";
 import ErrorMessage from "../components/ErrorMessage";
 import PageLayout from "../styles/PageLayout";
+import imagePost from "../assets/post.jpg";
 
 export default function Article() {
   const { postId } = useParams();
@@ -20,10 +21,7 @@ export default function Article() {
       <Header showArrow={true} />
       <ArticleLayout>
         <div>
-          <img
-            src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="tech"
-          />
+          <img src={imagePost} alt="tech" />
           <h2>{article?.title}</h2>
           <article>{article?.body}</article>
         </div>
