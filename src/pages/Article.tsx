@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 import Header from "../components/Header";
@@ -6,6 +5,7 @@ import usePosts from "../hooks/usePosts";
 import ArticleLayout from "../styles/ArticleLayout";
 import Comments from "../components/Comments";
 import ErrorMessage from "../components/ErrorMessage";
+import PageLayout from "../styles/PageLayout";
 
 export default function Article() {
   const { postId } = useParams();
@@ -34,17 +34,3 @@ export default function Article() {
     </PageLayout>
   );
 }
-
-const PageLayout = styled.main`
-  margin: 45px auto 0 auto;
-  padding: 0 10px;
-  width: 100%;
-  max-width: 1200px;
-  > h2 {
-    width: 100%;
-    max-width: 600px;
-    margin: 35px auto 0 auto;
-    font-weight: bold;
-    font-size: 24px;
-  }
-`;

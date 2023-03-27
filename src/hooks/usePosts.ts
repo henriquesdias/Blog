@@ -10,8 +10,8 @@ export default function usePosts(postId?: number) {
   useEffect(() => {
     getPosts()
       .catch((res) => {
-        console.log(res.data);
-        setError(res.data);
+        console.log(res);
+        setError(res);
       })
       .then((res) => {
         if (postId) {
